@@ -1,10 +1,3 @@
-//
-//  CurrencyRate.swift
-//  Delta_tour_kz
-//
-//  Created by Yerasyl on 29.10.2024.
-//
-
 import Foundation
 
 struct CurrencyRate: Identifiable, Codable {

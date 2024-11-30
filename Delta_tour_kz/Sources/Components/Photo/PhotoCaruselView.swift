@@ -1,10 +1,3 @@
-//
-//  PhotoCaruselView.swift
-//  Delta_tour_kz
-//
-//  Created by Yerasyl on 12.11.2024.
-//
-
 import SwiftUI
 
 struct PhotoCaruselView: View {

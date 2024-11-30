@@ -1,9 +1,3 @@
-//
-//  YouTubeVideoView.swift
-//  Delta_tour_kz
-//
-//  Created by Yerasyl on 04.11.2024.
-//
 import SwiftUI
 import WebKit
 

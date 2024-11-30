@@ -1,10 +1,3 @@
-//
-//  TavViews.swift
-//  Delta_tour_kz
-//
-//  Created by Yerasyl on 24.10.2024.
-//
-
 import SwiftUI
 
 struct TabViews: View {
@@ -46,7 +39,7 @@ struct TabViews: View {
                         Image("BG")
                             .resizable()
                             .ignoresSafeArea()
-                        FeedbackPage()
+                        FeedbackView()
                     }
                     .tabItem {
                         Label("Отзывы", systemImage: "ellipsis.message.fill")
@@ -70,8 +63,15 @@ struct TabViews: View {
             }
             .navigationTitle("Delta Tour KZ")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.gray)
-            .toolbarColorScheme(.dark)
+            .toolbarBackground(Color.gray, for: .navigationBar)
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Delta Tour KZ")
+                        .foregroundColor(.accent) // Задаем цвет текста
+                        .font(.headline) // Настраиваем шрифт
+                }
+            }
         }
     }
 }
