@@ -33,9 +33,9 @@ struct ServicesView: View {
                 Divider()
                 ServiceChargeView(serviceInfo: "Шенген виза", USDValue: 90, conversionRate: conversionRateEuro)
                 Divider()
-                ServiceChargeView(serviceInfo: "Великобритания виза", USDValue: 29.5, conversionRate: conversionRateDollar)
+                ServiceChargeView(serviceInfo: "Великобритания виза", USDValue: 155, conversionRate: conversionRateDollar)
                 Divider()
-                ServiceChargeView(serviceInfo: "Японская виза", USDValue: 29.5, conversionRate: conversionRateDollar)
+                japanCharge
                 Divider()
                 
                 
@@ -51,11 +51,10 @@ struct ServicesView: View {
     }
     
     let serviceData: [ServiceSection] = [
-        ServiceSection(title: "Наши результаты", images: ["usa", "uk", "europe", "japan"]),
-        ServiceSection(title: "Выкуп круизов и тур пакетов", images: ["uk", "japan", "usa", "uk", "europe", "japan"]),
-        ServiceSection(title: "Языковые курсы и лагерь за рубежом для детей до 18 лет", images: ["europe", "japan", "usa", "uk", "europe", "japan"]),
-        ServiceSection(title: "Приглашения из США на конференции, приглашения в университет", images: ["japan", "europe", "usa", "uk", "europe", "japan"]),
-        ServiceSection(title: "Организация туров под ключ", images: ["usa", "europe", "japan", "uk", "europe", "japan"])
+        ServiceSection(title: "Выкуп круизов и тур пакетов", images: (1...7).map { "cater\($0)" }),
+        ServiceSection(title: "Языковые курсы и лагерь за рубежом для детей до 18 лет", images: (1...7).map { "courses\($0)" }),
+        ServiceSection(title: "Приглашения из США на конференции, приглашения в университет", images: (1...2).map { "invitation\($0)" }),
+        ServiceSection(title: "Организация туров под ключ", images: (1...9).map { "organization\($0)" })
     ]
     
     func updateCurrencyRates() {
@@ -150,6 +149,36 @@ struct ServicesView: View {
         let key = "savedConversionRate\(currency)"
         UserDefaults.standard.set(rate, forKey: key)
         UserDefaults.standard.set(Date(), forKey: "lastFetchDate")
+    }
+    
+    var japanCharge: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .foregroundStyle(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color("leda2"), Color("leda")]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Японская виза")
+                        .font(.headline)
+                        .foregroundColor(.accent)
+                    
+                    Text("Консульский сбор")
+                        .font(.subheadline)
+                        .foregroundColor(.black.opacity(0.8))
+                }
+                Spacer()
+                Text("Бесплатно")
+                    .foregroundColor(.accent)
+                    .font(.title2)
+            }
+            .padding()
+        }
     }
 
 }

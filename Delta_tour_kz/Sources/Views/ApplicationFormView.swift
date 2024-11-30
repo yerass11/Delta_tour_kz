@@ -20,7 +20,7 @@ struct ApplicationFormView: View {
                     .padding(.horizontal)
                     .padding(.top)
                 
-                PhotoCaruselView(images: ["usa", "europe", "japan", "uk", "europe", "japan"])
+                PhotoCaruselView(images: (1...5).map { "nearest_tour\($0)" })
                 
                 Divider()
                 

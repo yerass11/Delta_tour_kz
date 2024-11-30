@@ -1,7 +1,7 @@
 import Foundation
 
 struct CurrencyRate: Identifiable, Codable {
-    let id: UUID = UUID()  // Генерация уникального ID
+    let id: UUID = UUID()
     let currency: String
     let code: String
     let rate: Double

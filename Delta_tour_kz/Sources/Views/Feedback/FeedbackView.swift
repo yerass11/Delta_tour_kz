@@ -4,11 +4,6 @@ struct FeedbackView: View {
     @State private var showSheet = false
     
     let imageNames = (1...28).map { "result\($0)" }
-    private let feedbackMessages = [
-        "Я Арман Арманов, спасибо большое организации Delta Tour kz за такие возможности...",
-        "Большое спасибо Delta Tour kz за профессионализм и поддержку на каждом этапе.",
-        "Хочу выразить огромную благодарность Delta Tour kz за успешное оформление визы!"
-    ]
     
     var body: some View {
         NavigationView {
@@ -49,9 +44,6 @@ struct FeedbackView: View {
                 VStack(spacing: 20) {
                     FeedbackHeader()
                     PhotoCaruselView(images: imageNames)
-                    ForEach(feedbackMessages, id: \.self) { message in
-                        FeedbackList(message: message)
-                    }
                 }
             }
         }

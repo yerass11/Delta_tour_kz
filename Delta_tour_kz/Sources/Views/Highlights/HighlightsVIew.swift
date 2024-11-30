@@ -11,7 +11,6 @@ struct HighlightsView: View {
                 
                 Image(self.images[currentIndex])
                     .resizable()
-//                    .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
                     .frame(width: geometry.size.width, height: nil, alignment: .center)
                 

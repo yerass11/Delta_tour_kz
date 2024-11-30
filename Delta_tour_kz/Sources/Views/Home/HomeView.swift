@@ -36,7 +36,7 @@ struct HomeView: View {
         if let url = URL(string: instaURL), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
-            print("Не удалось открыть Instagram.")
+            showAlert(message: "Unable to open Instagram. Please check if the app is installed or if the link is correct.")
         }
     }
     
@@ -46,7 +46,16 @@ struct HomeView: View {
         if let url = URL(string: urlWhats), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
         } else {
-            print("Не удалось открыть WhatsApp.")
+            showAlert(message: "Unable to open WhatsApp. Please ensure the app is installed.")
+        }
+    }
+    
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        if let topController = UIApplication.shared.keyWindow?.rootViewController {
+            topController.present(alert, animated: true, completion: nil)
         }
     }
 }

@@ -6,7 +6,6 @@ struct YouTubeShortsWebView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
-        // Загрузка полной ссылки YouTube Shorts
         if let url = URL(string: shortsURL) {
             let request = URLRequest(url: url)
             webView.load(request)

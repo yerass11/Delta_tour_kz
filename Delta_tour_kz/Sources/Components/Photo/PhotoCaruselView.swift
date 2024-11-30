@@ -9,8 +9,8 @@ struct PhotoCaruselView: View {
                 ForEach(0..<images.count, id: \.self) { index in
                     Image(images[index])
                         .resizable()
-                        .scaledToFill()
-                        .frame(height: 30)
+                        .scaledToFit()
+//                        .frame(height: /*30*/)
                         .tag(index)
                 }
             }
