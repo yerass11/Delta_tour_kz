@@ -1,6 +1,14 @@
-# Delta Tour KZ
+# Delta Tour KZ 
 
-Delta Tour KZ is a SwiftUI-based application designed to simplify visa application processes. The app provides users with the ability to browse visa requirements, fill out forms, and track their applications, all with an intuitive and user-friendly interface.
+<div style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="flex: 1;">
+        Delta Tour KZ is a SwiftUI-based application designed to simplify visa application processes. The app provides users with the ability to browse visa requirements, fill out forms, and track their applications, all with an intuitive and user-friendly interface.
+    </div>
+    <div>
+        <img src="assets/App_Icon.jpg" alt="App Icon" width="200" height="200">
+    </div>
+</div>
+
 
 ## Features
 - **Visa Application Forms:** Easy-to-use forms for submitting visa applications.
